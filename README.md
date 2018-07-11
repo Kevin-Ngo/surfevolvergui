@@ -12,4 +12,4 @@ In the case that you want to run the program locally (running the Surface Evolve
 ## Starting the *GUI for the Surface Evolver*
 If you created a nanoHUB account you can simply click "Launch Tool" to use it.
 If you manually installed the Rappture toolkit, clone this directory and using the shell navigate to the directory named "rappture". Once in this directory type "rappture" to run the tool. The command "rappture" will invoke the "tool.xml" file in the directory.
-<img src="docs/directory.png" width="500" height="250"/>
+<img src="docs/directory.png" width="400" height="250"/>
