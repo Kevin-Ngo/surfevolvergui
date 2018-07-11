@@ -50,3 +50,8 @@ The tool offers several graphs, all of which the data or the image of the graph 
 
 To download a graph or the data points that were used to create the plot, select the graph from the drop down menu, then reopen the drop down menu and click download. It will then allow you to specify if you want a \*.txt file of the data points, or a \*.jpg file which is an image of the graph.
 
+### Authors
+* **Kevin Ngo**
+* **Lucas Robinson** - *Purdue University: SURF Mentor*
+* **Dr. John Blendell** - *Purdue University: SURF Faculty Advisor*
+
