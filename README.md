@@ -3,7 +3,8 @@ The *GUI for the Surface Evolver* is an online simulation tool written by Kevin 
 
 ## Getting Started
 ### The Easy Way
-To use the tool, you do not need to install it, simply visit https://nanoHUB.org/tools/surfevolvergui, create an account and launch the tool. *Note: If you have trouble accessing the tool after creating an account - submit a ticket and request to use the tool.* 
+To use the tool, you do not need to install it, simply visit https://nanoHUB.org/tools/surfevolvergui, create an account and launch the tool. *Note: If you have trouble accessing the tool after creating an account - submit a ticket and request to use the tool.*
+
 <img src="docs/launch.png"/>
 
 ### The Hard Way
