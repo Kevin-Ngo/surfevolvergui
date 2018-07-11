@@ -14,7 +14,7 @@ In the case that you want to run the program locally (running the Surface Evolve
 If you created a nanoHUB account you can simply click "Launch Tool" to use it.
 If you manually installed the Rappture toolkit, clone this directory and using the shell navigate to the directory named "rappture". Once in this directory type "rappture" to run the tool. The command "rappture" will invoke the "tool.xml" file in the directory.
 
-<img src="docs/directory.png" width="350" height="250"/>
+<img src="docs/directory.png" width="450" height="350"/>
 
 ## Running the *GUI for the Surface Evolver*
 The tool has default parameters which are simply the number of grains and if you wish to enable color or not (for the images of grains ebfore and after).
@@ -28,7 +28,7 @@ These parameters can be changed; however, note that enabling color will slow dow
 
 Once you have edited these parameters to your heart's content, simly click "Simulate"!
 
-<img src="docs/toolBefore.png" width="400" height="300"/>
+<img src="docs/toolBefore.png" width="450" height="350"/>
 
 ## Features
 The *GUI for the Surface Evolver* was made to simplify the process of running and studying the growth of crystal grains. To do this, there are many ways to view/download the information gathered during the simulation.
