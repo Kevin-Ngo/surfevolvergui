@@ -17,7 +17,7 @@ If you manually installed the Rappture toolkit, clone this directory and using t
 <img src="docs/directory.png" width="450" height="350"/>
 
 ## Running the *GUI for the Surface Evolver*
-The tool has default parameters which are simply the number of grains and if you wish to enable color or not (for the images of grains ebfore and after).
+The tool has default parameters which are simply the number of grains and if you wish to enable color or not (for the images of grains before and after).
 These parameters can be changed; however, note that enabling color will slow down the speed of the simulation.
 
 **Number of Grains**: "Number of Grains" is the number of grains that you want to start off with that is distributed accross the plane via a Voronoi Tesselation. (Default is 100 grains)
@@ -32,4 +32,9 @@ Once you have edited these parameters to your heart's content, simly click "Simu
 
 ## Features
 The *GUI for the Surface Evolver* was made to simplify the process of running and studying the growth of crystal grains. To do this, there are many ways to view/download the information gathered during the simulation.
-The tool offers several graphs
+The tool offers several graphs, all of which the data or the image of the graph can be downloaded.
+
+<img src="docs/output.png" width="450" height="350"/>
+
+To download a graph or the data points that were used to create the plot, select the graph from the drop down menu, then reopen the drop down menu and click download. It will then allow you to specify if you want a \*.txt file of the data points, or a \*.jpg file which is an image of the graph.
+
