@@ -20,11 +20,11 @@ If you manually installed the Rappture toolkit, clone this directory and using t
 The tool has default parameters which are simply the number of grains and if you wish to enable color or not (for the images of grains ebfore and after).
 These parameters can be changed; however, note that enabling color will slow down the speed of the simulation.
 
-**Number of Grains**: "Number of Grains" is the number of grains that you want to start off with that is distributed accross the plane via a Voronoi Tesselation.
+**Number of Grains**: "Number of Grains" is the number of grains that you want to start off with that is distributed accross the plane via a Voronoi Tesselation. (Default is 100 grains)
 
-**Number of Iterations**: "Number of Iterations" is the number of times that you want the grains to grow. There are periods to the grain growth and you can specify how many iterations of "g" to run. The higher the number, the longer the simulation will run and the shape of the grains will naturally be at a lower energy-state.
+**Number of Iterations**: "Number of Iterations" is the number of times that you want the grains to grow. There are periods to the grain growth and you can specify how many iterations of "g" to run. The higher the number, the longer the simulation will run and the shape of the grains will naturally be at a lower energy-state. (Default is 1 iteration)
 
-**Enable Color**: "Enable Color" is a toggle button that allows a user to see images of the grains in color, rather than with no color. This must be checked off or on before running the simulation and cannot be changed during the simulation. *Note: Enabling color will slow down the computational speed of the simulation*
+**Enable Color**: "Enable Color" is a toggle button that allows a user to see images of the grains in color, rather than with no color. This must be checked off or on before running the simulation and cannot be changed during the simulation. (Default is no color) *Note: Enabling color will slow down the computational speed of the simulation.*
 
 Once you have edited these parameters to your heart's content, simly click "Simulate"!
 
@@ -32,3 +32,4 @@ Once you have edited these parameters to your heart's content, simly click "Simu
 
 ## Features
 The *GUI for the Surface Evolver* was made to simplify the process of running and studying the growth of crystal grains. To do this, there are many ways to view/download the information gathered during the simulation.
+The tool offers several graphs
