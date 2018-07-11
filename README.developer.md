@@ -5,6 +5,10 @@
 
 ## A Quick Rappture Overview
 When you start developing with Rappture, you'll see that it is all ran on the Linux Bash.
-**Commands**:
-1. "rappture" - runs the "tool.xml" file that is in the current directory.
+
+###Commands###:
+~~~~
+1. **"rappture"** - runs the "tool.xml" file that is in the current directory.
+
 2. "rappture -builder" - opens up the "tool.xml" file, but in "building" mode. This is useful for adding features on to the GUI. *Note: When you exit the builder, DO NOT CHECK THE BOX TO SAVE THE \*.PY FILE, THIS WILL OVERRIDE THE MAIN.PY*
+~~~~~
