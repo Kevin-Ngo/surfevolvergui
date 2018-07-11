@@ -4,9 +4,7 @@ The *GUI for the Surface Evolver* is an online simulation tool written by Kevin 
 ## Getting Started
 ### The Easy Way
 To use the tool, you do not need to install it, simply visit https://nanoHUB.org/tools/surfevolvergui, create an account and launch the tool. *Note: If you have trouble accessing the tool after creating an account - submit a ticket and request to use the tool.* 
-~~~~
 <img src="docs/launch.png"/>
-~~~~
 
 ### The Hard Way
 In the case that you want to run the program locally (running the Surface Evolver in some instances is computationally expensive so running the program locally often will speed up the process of simulation) or edit the source, the Rappture toolkit must be installed and it can be found at https://nanohub.org/infrastructure/rappture/wiki/rappture_install_linux. The website offers installation guides for Linux/macOS systems as well as documentation for the Rappture interface.
@@ -14,6 +12,4 @@ In the case that you want to run the program locally (running the Surface Evolve
 ## Starting the *GUI for the Surface Evolver*
 If you created a nanoHUB account you can simply click "Launch Tool" to use it.
 If you manually installed the Rappture toolkit, clone this directory and using the shell navigate to the directory named "rappture". Once in this directory type "rappture" to run the tool. The command "rappture" will invoke the "tool.xml" file in the directory.
-~~~~
 <img src="docs/directory.png"/>
-~~~~
