@@ -36,5 +36,17 @@ The tool offers several graphs, all of which the data or the image of the graph 
 
 <img src="docs/output.png" width="450" height="350"/>
 
+**Grains Before**: is a static image of the plane before running the simulation.
+
+**Grains After**: is a static image of the plane after running the simulation.
+
+**Area vs. Time**: is a curve representing the total area of the colored grains (in this case grains come in three different orientations, marked by color, being either: red, green or white, respect to time.
+
+**Number of Grains vs. Time**: is a curve representing the total number of grains respect to time.
+
+**Average Number of Sides per Grain vs. Time**: is a curve representing the average number of sides for each colored grain, respect to time.
+
+**Average Curvature per Grain vs. Time**: is a curve representing the average energy per grain, respect to time.
+
 To download a graph or the data points that were used to create the plot, select the graph from the drop down menu, then reopen the drop down menu and click download. It will then allow you to specify if you want a \*.txt file of the data points, or a \*.jpg file which is an image of the graph.
 
