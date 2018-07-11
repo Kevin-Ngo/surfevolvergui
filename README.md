@@ -1,2 +1,3 @@
-# surfevolvergui
-GUI for the Surface Evolver to simulate the growth of crystal grains in 2D.
+# GUI for the Surface Evolver
+The *GUI for the Surface Evolver* is an online simulation tool written by Kevin Ngo in collaboration with Dr. John Blendell and Lucas Robinson at Purdue University. The original program, named *Surface Evolver*, not to be confused with the *GUI for the Surface Evolver*, is an "interactive program for the modelling of surfaces shaped by various forces and constraints" that is written by Ken Brakke. The *GUI for the Surface Evolver* is made through the *Rappture toolkit* and simplifies the process of simulating the growth of crystal grains growing in 2D by offering users an abstraction from the command line as well as a simple way to extract useful data from the simulation.
+## Getting Started
