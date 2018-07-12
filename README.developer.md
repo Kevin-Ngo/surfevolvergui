@@ -49,13 +49,12 @@ gogo N
 To run/edit the *GUI for the Surface Evolver* there are many files used.
 1. **main.py**: The *GUI for the Surface Evolver* is written in python. This main.py uses modules/libraries that are needed for Rappture and are already imported.
 
-**Note: When running the *GUI for the Surface Evolver* in a local workspace, edit the path for "pathToData" and "pathToOutputDirectory". The "pathToData" is a string containing the address of the directory where data to run the program correctly is stored, such as what commands to append to the *.fe file and also the images of grains to output. The "pathToOutputDirectory" is a string containing the address of the directory where the collected data from the *Surface Evolver* is outputted.**
+**Note: When running the *GUI for the Surface Evolver* in a local workspace, edit the path for "pathToData" and "pathToOutputDirectory". The "pathToData" is a string containing the address of the directory where data to run the program correctly is stored, such as what commands to append to the \*.fe file and also the images of grains to output. The "pathToOutputDirectory" is a string containing the address of the directory where the collected data from the *Surface Evolver* is outputted.**
 
 <img src="/docs/changePaths.png"/>
 
-Here is the general flow of the program:
-
-**Invoke the Rappture Interface &rarr; Assign in-line variables to the user-parameters &rarr; Generate an \*.fe file &rarr; Append commands to the newly generated \*.fe file &rarr; Append a command to capture the image before simulating &rarr; Append "gogo -N" based on parameters &rarr; Run simulation &rarr; Capture image after &rarr; Extract information from the text files that were created by *Surface Evolver* &rarr; Output the information to Rappture**
+**Here is the general flow of the program:
+Invoke the Rappture Interface &rarr; Assign in-line variables to the user-parameters &rarr; Generate an \*.fe file &rarr; Append commands to the newly generated \*.fe file &rarr; Append a command to capture the image before simulating &rarr; Append "gogo -N" based on parameters &rarr; Run simulation &rarr; Capture image after &rarr; Extract information from the text files that were created by *Surface Evolver* &rarr; Output the information to Rappture**
 
 2. **tool.xml**: This is the main file used with Rappture. Typically you do not have to edit this file. When you make a change to the tool using "rappture -builder", simply save the changes and check the box to update the "tool.xml".
 
