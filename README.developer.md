@@ -2,25 +2,25 @@
 
 **Use subversion! (NCN URE Students)**
 
-At Purdue University, specifically nanoHUB, it is how they keep code organized and accessible in the future. Subversion is similar to GitHub (allows you to control versions and is also a safe place to back-up your code), but in the case that you are not familiar with it, click [here](https://www.thegeekstuff.com/2011/04/svn-command-examples/) for a brief overview. If you want to checkout the code to a workspace, run the following command.
+At Purdue University, specifically nanoHUB, Subversion is how they keep code organized and accessible in the future. Subversion is similar to GitHub (allows you to control versions and is also a safe place to back-up your code), but in the case that you are not familiar with it, click [here](https://www.thegeekstuff.com/2011/04/svn-command-examples/) for a brief overview. If you want to checkout the code to a workspace, run the following command.
 
 ~~~~~
 svn checkout https://nanohub.org/tools/surfevolvergui/svn/trunk surfevolvergui
 ~~~~~
 
 ## A Quick Rappture Overview
-When you start developing with Rappture, you'll see that it is all ran on the Linux Bash. The "documentation" can be found [here](https://nanohub.org/infrastructure/rappture/wiki/Documentation); however, in my experience, the online YouTube series for Development with Rappture and the "examples page" were far more useful. This series can be watched [here](https://youtu.be/2g7lgOr8SJ4) and for the trunk examples, if you have a nanoHUB account with permissions, it can be found [here](https://nanohub.org/infrastructure/rappture/browser/trunk/examples/zoo?order=name).
+When you start developing with Rappture, you'll see that it is all ran on the Linux Bash. The "documentation" can be found [here](https://nanohub.org/infrastructure/rappture/wiki/Documentation); however, in my experience, the online YouTube series for Development with Rappture and the "examples" page were far more useful. This series can be watched [here](https://youtu.be/2g7lgOr8SJ4) and for the examples, if you have a nanoHUB account with permissions to view the page, it can be found [here](https://nanohub.org/infrastructure/rappture/browser/trunk/examples/zoo?order=name).
 
 ### Commands:
 ~~~~
 rappture
 ~~~~
-1. "**rappture**": runs the "tool.xml" file that is in the current directory.
+1. "**rappture**": invokes the "tool.xml" file that is in the current directory.
  
 ~~~~
 rappture -builder
 ~~~~
-2. "**rappture -builder**": opens up the "tool.xml" file, but in "building" mode. This is useful for adding features on to the GUI. *Note: When you exit/save the builder,* **__DO NOT CHECK THE BOX TO SAVE THE \*.PY FILE, THIS WILL OVERRIDE THE MAIN.PY WITH A BAREBONES SKELETON PROGRAM__**
+2. "**rappture -builder**": invokes the "tool.xml" file, but in "building/editing" mode. This is useful for adding features to the GUI. *Note: When you exit/save the builder,* **__DO NOT CHECK THE BOX TO SAVE THE \*.PY FILE, THE DEFAULT PATH WILL OVERRIDE THE MAIN.PY WITH A BAREBONES SKELETON PROGRAM__**
 
 ## A Quick Surface Evolver Overview (For Grain Growth)
 When you start the *Surface Evolver*, it expects an input which is the path to an \*.fe file. In the case for modeling the growth of grains, this initial \*.fe file is created through the executable "vor2fe.exe". The vor2fe.exe takes arguments for how many grains to create, which it then distributes the 2D plane into that many "grains" (facets). On the shell, it is invoked using the following command. *Note: "N" represents the number of grains that you want, put any number.*
@@ -49,13 +49,13 @@ gogo N
 
 ## The *GUI for Surface Evolver* Files
 To run/edit the *GUI for the Surface Evolver* there are many files used.
-1. **main.py**: The *GUI for the Surface Evolver* is written in python. This main.py uses modules/libraries that are needed for Rappture and are already imported.
+1. **main.py**: The *GUI for the Surface Evolver* is backended with Python. This main.py uses modules/libraries that are needed for Rappture and are already imported. To make computational changes in the tool, edit this file and also the reportAndSImulateCommands.txt file.
 
 **Note: When running the *GUI for the Surface Evolver* in a local workspace, edit the path for "pathToData" and "pathToOutputDirectory". The "pathToData" is a string containing the address of the directory where data to run the program correctly is stored, such as what commands to append to the \*.fe file and also the images of grains to output. The "pathToOutputDirectory" is a string containing the address of the directory where the collected data from the *Surface Evolver* is outputted.**
 
 <img src="/docs/changePaths.png"/>
 
-**Here is the general flow of the program:
+**Here is the general flow of the script:
 Invoke the Rappture Interface &rarr; Assign in-line variables to the user-parameters &rarr; Generate an \*.fe file &rarr; Append commands to the newly generated \*.fe file &rarr; Append a command to capture the image before simulating &rarr; Append "gogo -N" based on parameters &rarr; Run simulation &rarr; Capture image after &rarr; Extract information from the text files that were created by *Surface Evolver* &rarr; Output the information to Rappture**
 
 2. **tool.xml**: This is the main file used with Rappture. Typically you do not have to edit this file. When you make a change to the tool using "rappture -builder", simply save the changes and check the box to update the "tool.xml".
@@ -64,6 +64,4 @@ Invoke the Rappture Interface &rarr; Assign in-line variables to the user-parame
 
 ## Final Notes
 
-This was a very short README file; however, it should contain all of the necessary information needed to contribute to the project.
-
-This project was worked on by Kevin Ngo in collaboration with Lucas Robinson and Dr. John Blendell in the summer of 2018 at Purdue University for the NCN URE program.
+This project was worked on by Kevin Ngo in collaboration with Lucas Robinson and Dr. John Blendell in the Summer of 2018 at Purdue University for the NCN URE program.
