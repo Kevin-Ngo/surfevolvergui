@@ -18,7 +18,7 @@ rappture
 ~~~~
 rappture -builder
 ~~~~
-2. "**rappture -builder**": opens up the "tool.xml" file, but in "building" mode. This is useful for adding features on to the GUI. *Note: When you exit/save the builder,* **__DO NOT CHECK THE BOX TO SAVE THE \*.PY FILE, THIS WILL OVERRIDE THE MAIN.PY__**
+2. "**rappture -builder**": opens up the "tool.xml" file, but in "building" mode. This is useful for adding features on to the GUI. *Note: When you exit/save the builder,* **__DO NOT CHECK THE BOX TO SAVE THE \*.PY FILE, THIS WILL OVERRIDE THE MAIN.PY WITH A BAREBONES SKELETON PROGRAM__**
 
 ## A Quick Surface Evolver Overview (For Grain Growth)
 When you start the *Surface Evolver*, it expects an input which is the path to an \*.fe file. In the case for modeling the growth of grains, this initial \*.fe file is created through the executable "vor2fe.exe". The vor2fe.exe takes arguments for how many grains to create, which it then distributes the 2D plane into that many "grains" (facets). On the shell, it is invoked using the following command. *Note: "N" represents the number of grains that you want, put any number.*
@@ -31,5 +31,10 @@ After creating the "grains", it marks the grains by color, randomly, then dissol
 
 The *Surface Evolver* is an interactive program, meaning you can continuously pass arguments to it, such as "GOGO" (user-defined).
 
-### Commands:
+**For *Surface Evolver* commands, view the documentation, which can be found [here](http://facstaff.susqu.edu/brakke/evolver/html/evolver.htm).**
 
+### Commands (User-Defined):
+~~~~
+gogo N
+~~~~
+1. "**gogo**": is a function that when ran in the *Surface Evolver*, will cause the grains to move for however many iterations. In addition to simulating the grain growth, "gogo" is the main function where data is "told" to be collected. Typically when you want to create a feature to record a new type of data not already being collected, create a function, then add it to "gogo". "gogo" currently outputs data from the surface to text files named: "xxx-report.txt" and "sides.txt". An example of using "gogo" - e.g.: "gogo 100" will run "gogo" 100 times.
