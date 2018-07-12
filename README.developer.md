@@ -1,5 +1,4 @@
 # README for *GUI for Surface Evolver* Developers
-(Yes, I am talking to you, most likely - NCN URE Student!)
 
 **Use subversion! (NCN URE Student)** At Purdue University, specifically nanoHUB, it is how they keep code organized and accessible in the future. Subversion is similar to GitHub (allows you to control versions and is also a safe place to back-up your code), but incase you are not familiar with it, click [here](https://www.thegeekstuff.com/2011/04/svn-command-examples/) for a brief overview. If you want to checkout the code to a workspace, run the following command.
 
@@ -11,9 +10,17 @@ svn checkout https://nanohub.org/tools/surfevolvergui/svn/trunk surfevolvergui
 When you start developing with Rappture, you'll see that it is all ran on the Linux Bash.
 
 ### Commands:
-1. **"rappture"** - runs the "tool.xml" file that is in the current directory.
+1.
+~~~~
+rappture
+~~~~
+runs the "tool.xml" file that is in the current directory.
 
-2. **"rappture -builder"** - opens up the "tool.xml" file, but in "building" mode. This is useful for adding features on to the GUI. *Note: When you exit/save the builder,* **__DO NOT CHECK THE BOX TO SAVE THE \*.PY FILE, THIS WILL OVERRIDE THE MAIN.PY__**
+2. 
+~~~~
+rappture -builder
+~~~~
+opens up the "tool.xml" file, but in "building" mode. This is useful for adding features on to the GUI. *Note: When you exit/save the builder,* **__DO NOT CHECK THE BOX TO SAVE THE \*.PY FILE, THIS WILL OVERRIDE THE MAIN.PY__**
 
 ## A Quick Surface Evolver Overview (For Grain Growth)
 When you start the *Surface Evolver*, it expects an input which is the path to an \*.fe file. In the case for modeling the growth of grains, this initial \*.fe file is created through the executable "vor2fe.exe". The vor2fe.exe takes arguments for how many grains to create, which it then distributes the 2D plane into that many "grains" (facets). On the shell, it is invoked using the following command. *Note: "N" represents the number of grains that you want, put any number.*
