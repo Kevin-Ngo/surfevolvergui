@@ -53,6 +53,7 @@ To run/edit the *GUI for the Surface Evolver* there are many files used.
 
 <img src"/docs/changePaths.png"/>
 
-Here is the general flow of the program:\n
-**Invoke the Rappture Interface &rarr; Assign in-line variables to the user-parameters &rarr; Generate an *.fe file &rarr; Append commands to the newly generated *.fe file &rarr; Append a command to capture the image before simulating &rarr; Append "gogo -N" based on parameters &rarr; Run simulation &rarr; Capture image after &rarr; Extract information from the text files that were created by *Surface Evolver* rarr; Output the information to Rappture
+Here is the general flow of the program:
+
+**Invoke the Rappture Interface &rarr; Assign in-line variables to the user-parameters &rarr; Generate an *.fe file &rarr; Append commands to the newly generated *.fe file &rarr; Append a command to capture the image before simulating &rarr; Append "gogo -N" based on parameters &rarr; Run simulation &rarr; Capture image after &rarr; Extract information from the text files that were created by *Surface Evolver* &rarr; Output the information to Rappture**
 
