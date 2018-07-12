@@ -37,4 +37,7 @@ The *Surface Evolver* is an interactive program, meaning you can continuously pa
 ~~~~
 gogo N
 ~~~~
-1. "**gogo**": is a function that when ran in the *Surface Evolver*, will cause the grains to move for however many iterations. In addition to simulating the grain growth, "gogo" is the main function where data is "told" to be collected. Typically when you want to create a feature to record a new type of data not already being collected, create a function, then add it to "gogo". "gogo" currently outputs data from the surface to text files named: "xxx-report.txt" and "sides.txt". An example of using "gogo" - e.g.: "gogo 100" will run "gogo" 100 times.
+1. "**gogo**": is a function that when ran in the *Surface Evolver*, will cause the grains to grow for "N" iterations. In addition to simulating the grain growth, "gogo" is the main function where data is "told" to be collected. Typically when you want to create a feature to record a new type of data not already being collected, create a function, then add it to "gogo". "gogo" currently outputs data from the surface to text files named: "xxx-report.txt" and "sides.txt".
+e.g.: "gogo 100" will run "gogo" 100 times.
+
+
