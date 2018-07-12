@@ -39,7 +39,7 @@ gogo N
 ~~~~
 1. "**gogo**": is a function that when ran in the *Surface Evolver*, will cause the grains to grow for "N" iterations. In addition to simulating the grain growth, "gogo" is the main function where data is "told" to be collected. Typically when you want to create a feature to record a new type of data not already being collected, create a function, then add it to "gogo". "gogo" currently outputs data from the surface to text files named: "xxx-report.txt" and "sides.txt".
 
-<img src="gogoDemo.png"/>
+<img src="/docs/gogoDemo.png"/>
 
 2. "**reportSize**": is a helper function that is used inside "gogo". This function will output the number of sides each grains has at the time that the function is called to a file called "sides.txt".
 
@@ -47,5 +47,12 @@ gogo N
 
 ## The *GUI for Surface Evolver* Files
 To run/edit the *GUI for the Surface Evolver* there are many files used.
-1. **main.py**: The *GUI for the Surface Evolver* is written in python. This main.py uses modules/libraries that are needed for Rappture and are already imported. Here is the general flow of the program:
-**Invoke the Rappture Interface &rarr;
+1. **main.py**: The *GUI for the Surface Evolver* is written in python. This main.py uses modules/libraries that are needed for Rappture and are already imported.
+
+*Note: When running the *GUI for the Surface Evolver* in a local workspace, edit the path for "pathToData" and "pathToOutputDirectory". The "pathToData" is a string containing the address of the directory where data to run the program correctly is stored, such as what commands to append to the *.fe file and also the images of grains to output. The "pathToOutputDirectory" is a string containing the address of the directory where the collected data from the *Surface Evolver* is outputted.
+
+<img src"/docs/changePaths.png"/>
+
+Here is the general flow of the program:\n
+**Invoke the Rappture Interface &rarr; Assign in-line variables to the user-parameters &rarr; Generate an *.fe file &rarr; Append commands to the newly generated *.fe file &rarr; Append a command to capture the image before simulating &rarr; Append "gogo -N" based on parameters &rarr; Run simulation &rarr; Capture image after &rarr; Extract information from the text files that were created by *Surface Evolver* rarr; Output the information to Rappture
+
