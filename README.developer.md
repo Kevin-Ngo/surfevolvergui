@@ -31,13 +31,18 @@ After creating the "grains", it marks the grains by color, randomly, then dissol
 
 The *Surface Evolver* is an interactive program, meaning you can continuously pass arguments to it, such as "GOGO" (user-defined).
 
-**For *Surface Evolver* commands, view the documentation, which can be found [here](http://facstaff.susqu.edu/brakke/evolver/html/evolver.htm).**
+**For *Surface Evolver* commands (most important commands), view the documentation, which can be found [here](http://facstaff.susqu.edu/brakke/evolver/html/evolver.htm). It is dense; however, very helpful! Refer to this for all *Surface Evolver* commands**
 
 ### Commands (User-Defined):
 ~~~~
 gogo N
 ~~~~
 1. "**gogo**": is a function that when ran in the *Surface Evolver*, will cause the grains to grow for "N" iterations. In addition to simulating the grain growth, "gogo" is the main function where data is "told" to be collected. Typically when you want to create a feature to record a new type of data not already being collected, create a function, then add it to "gogo". "gogo" currently outputs data from the surface to text files named: "xxx-report.txt" and "sides.txt".
-e.g.: "gogo 100" will run "gogo" 100 times.
+
+<img src="gogoDemo.png"\>
+
+2. "**reportSize**": is a helper function that is used inside "gogo". This function will output the number of sides each grains has at the time that the function is called to a file called "sides.txt".
+
+3. "**reportEnergyArea**": is a helper function that is used inside "gogo". This function function will output the area of each grain as well as the energy of the system at the time that it is called to a file called "xxx-report.txt".
 
 
