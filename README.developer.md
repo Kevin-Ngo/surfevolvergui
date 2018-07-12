@@ -45,4 +45,7 @@ gogo N
 
 3. "**reportEnergyArea**": is a helper function that is used inside "gogo". This function function will output the area of each grain as well as the energy of the system at the time that it is called to a file called "xxx-report.txt".
 
-
+## The *GUI for Surface Evolver* Files
+To run/edit the *GUI for the Surface Evolver* there are many files used.
+1. **main.py**: The *GUI for the Surface Evolver* is written in python. This main.py uses modules/libraries that are needed for Rappture and are already imported. Here is the general flow of the program:
+**Invoke the Rappture Interface &rarr;
