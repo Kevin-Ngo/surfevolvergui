@@ -9,7 +9,7 @@ svn checkout https://nanohub.org/tools/surfevolvergui/svn/trunk surfevolvergui
 ~~~~~
 
 ## A Quick Rappture Overview
-When you start developing with Rappture, you'll see that it is all ran on the Linux Bash.
+When you start developing with Rappture, you'll see that it is all ran on the Linux Bash. The "documentation" can be found [here](https://nanohub.org/infrastructure/rappture/wiki/Documentation); however, in my experience, the online YouTube series for Development with Rappture and the "examples page" were far more useful. This series can be watched [here](https://youtu.be/2g7lgOr8SJ4) and for the trunk examples, if you have a nanoHUB account with permissions, it can be found [here](https://nanohub.org/infrastructure/rappture/browser/trunk/examples/zoo?order=name).
 
 ### Commands:
 ~~~~
@@ -62,3 +62,8 @@ Invoke the Rappture Interface &rarr; Assign in-line variables to the user-parame
 
 3. **reportAndSimulateCommands.txt**: This is a text file that is appended to a *.fe file. This text file should be updated accordingly if you want to add new features. Define a new function here then add it to the "gogo" function to run it.
 
+## Final Notes
+
+This was a very short README file; however, it should contain all of the necessary information needed to contribute to the project.
+
+This project was worked on by Kevin Ngo in collaboration with Lucas Robinson and Dr. John Blendell in the summer of 2018 at Purdue University for the NCN URE program.
