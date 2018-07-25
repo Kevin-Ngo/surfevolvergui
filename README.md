@@ -53,7 +53,7 @@ To download a graph or the data points that were used to create the plot, select
 ## Authors
 * **Kevin Ngo**
 * **Lucas Robinson** - *Purdue University: SURF Mentor* - [Bio](https://engineering.purdue.edu/ComputationalMaterials/people/LucasRobinson/)
-* **Dr. John Blendell** - *Purdue University: SURF Faculty Advisor* - [Bio](https://engineering.purdue.edu/MSE/people/ptProfile?resource_id=11080)
 
 ## Acknowledgements
+* **Dr. John Blendell** - *Purdue University: SURF Faculty Advisor* - [Bio](https://engineering.purdue.edu/MSE/people/ptProfile?resource_id=11080)
 * **Dr. Ken Brakke** - *Author of the Surface Evolver* - [Bio](http://facstaff.susqu.edu/brakke/)
