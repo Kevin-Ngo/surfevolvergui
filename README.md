@@ -17,8 +17,10 @@ If you manually installed the Rappture toolkit, clone this directory and use the
 <img src="docs/directory.png" width="450" height="350"/>
 
 ## Running the *GUI for the Surface Evolver*
-The tool has default parameters, which are simply the number of grains, and if you wish to enable color or not (for the images of grains before and after).
+The tool has default parameters, which are simply the type of simulation, the number of grains, and if you wish to enable color or not (for the images of grains before and after).
 These parameters can be changed; however, note that enabling color will slow down the speed of the simulation.
+
+**Type of Simulation**: The tool currently supports modeling for 3phase-isotropic, 3phase-mm4-cos, and 3phase-mm4-octagon grains, simply select which type of simulation you want to model.
 
 **Number of Grains**: "Number of Grains" is the number of grains that you want to start off with that is distributed accross the plane via a Voronoi Tesselation. (Default is 100 grains)
 
@@ -40,13 +42,13 @@ The tool offers several graphs, all of which the data or the image of the graph 
 
 **Grains After**: is a static image of the plane after running the simulation.
 
-**Area vs. Time**: is a curve representing the total area of the colored grains (in this case grains come in three different orientations, marked by color, being either: red, green or white), with respect to time.
+**Area vs. Iterations of "g" in Surface Evolver**: is a curve representing the total area of the colored grains (in this case grains come in three different orientations, marked by color, being either: red, green or white), with respect to Iterations of "g" in Surface Evolver.
 
-**Number of Grains vs. Time**: is a curve representing the total number of grains respect to time.
+**Number of Grains vs. Iterations of "g" in Surface Evolver**: is a curve representing the total number of grains respect to Iterations of "g" in Surface Evolver.
 
-**Average Number of Sides per Grain vs. Time**: is a curve representing the average number of sides for each colored grain, with respect to time.
+**Average Number of Sides per Grain vs. Iterations of "g" in Surface Evolver**: is a curve representing the average number of sides for each colored grain, with respect to Iterations of "g" in Surface Evolver.
 
-**Average Curvature per Grain vs. Time**: is a curve representing the average energy per grain, with respect to time.
+**Average Curvature per Grain vs. Iterations of "g" in Surface Evolver**: is a curve representing the average energy per grain, with respect Iterations of "g" in Surface Evolver.
 
 To download a graph or the data points that were used to create the plot, select the graph from the drop down menu, then reopen the drop down menu and click download. It will then allow you to specify if you want a \*.txt file of the data points, or a \*.jpg file, which is an image of the graph.
 
