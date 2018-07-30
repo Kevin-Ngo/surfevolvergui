@@ -30,13 +30,13 @@ These parameters can be changed; however, note that enabling color will slow dow
 
 Once you have edited these parameters to your heart's content, simly click "Simulate"!
 
-<img src="docs/toolBefore.png" width="450" height="350"/>
+<img src="docs/toolBefore.png" width="500" height="350"/>
 
 ## Features
 The *GUI for the Surface Evolver* was made to simplify the process of running and to study the growth of crystal grains. To do this, there are many ways to view/download the information gathered during the simulation.
 The tool offers several graphs, all of which the data or the image of the graph can be downloaded.
 
-<img src="docs/output.png" width="450" height="350"/>
+<img src="docs/output.png" width="500" height="350"/>
 
 **Grains Before**: is a static image of the plane before running the simulation.
 
