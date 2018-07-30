@@ -31,10 +31,9 @@ When you start the *Surface Evolver*, it expects an input which is the path to a
 
 After creating the "grains", it marks the grains by color, randomly, then dissolves edges between facets of the same color. Lastly, it also creates a function that will iterate the surface (move to lower energy) and report qualities about the surface such as area, time, number of sides, etc. The function is called "gogo" and it is important because it is how you simulate growth and also collect data into a text file.
 
-The *Surface Evolver* is an interactive program, meaning you can continuously pass arguments to it, such as "GOGO" (user-defined).
+The *Surface Evolver* is an interactive program, meaning you can continuously pass arguments to it, such as "gogo" (user-defined).
 
-**For *Surface Evolver* commands, view the documentation, which can be found [here](http://facstaff.susqu.edu/brakke/evolver/html/evolver.htm). It is dense; however, very helpful! You will most likely be reading this the majority of the time. Refer to the documentation for all *Surface Evolver* commands**
-a.
+**For *Surface Evolver* commands, view the documentation, which can be found [here](http://facstaff.susqu.edu/brakke/evolver/html/evolver.htm). It is dense; however, very helpful! You will most likely be reading this the majority of the time. Refer to the documentation for all *Surface Evolver* commands**.
 ### Commands (User-Defined):
 ~~~~
 gogo N
@@ -57,7 +56,7 @@ To run/edit the *GUI for the Surface Evolver* there are many files used.
 
 4. **3phase-iso.txt**: This is a text file containing *Surface Evolver* commands for when the type of simulation is a 3phase-isotropic simulation. This file is appended to a \*.fe file. This text file should be updated accordingly if you want to add new features. Define a new function here then add it to the "gogo" function to run it.
 
-5. **3phase-mm4-cos.txt**: This is a text file containing *Surface Evolver* commands for when the type of simulation is a 3phase-mm4-cos simulation.This file is appended to a \*.file. This text file should be updated accordingly if you want to add new features. Define a new function here then add it to the "gogo" function to run it.
+5. **3phase-mm4-cos.txt**: This is a text file containing *Surface Evolver* commands for when the type of simulation is a 3phase-mm4-cos simulation. This file is appended to a \*dw.file. This text file should be updated accordingly if you want to add new features. Define a new function here then add it to the "gogo" function to run it.
 
 6. **3phase-mm4-octagon.txt**: This is a text file containing *Surface Evolver* commands for when the type of simulation is a 3phase-mm4-octagon simulation.This file is appended to a \*.fe file. This text file should be updated accordingly if you want to add new features. Define a new function here then add it to the "gogo" function to run it.
 
