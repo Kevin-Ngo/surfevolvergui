@@ -2,7 +2,7 @@
 
 **Use Subversion! (NCN URE Students)**
 
-At Purdue University, specifically nanoHUB, Subversion is how they keep code organized and accessible in the future. Subversion is similar to GitHub (allows you to control versions and is also a safe place to back-up your code), but in the case that you are not familiar with it, click [here](https://www.thegeekstuff.com/2011/04/svn-command-examples/) for a brief overview. If you want to checkout the code to a workspace, run the following command in the shell.
+At Purdue University, specifically nanoHUB, Subversion is how they keep code organized and accessible in the future (hopefully they switch to GitHub!). Subversion is similar to GitHub (allows you to control versions and is also a safe place to back-up your code), but in the case that you are not familiar with it, click [here](https://www.thegeekstuff.com/2011/04/svn-command-examples/) for a brief overview. If you want to checkout the code to a workspace, run the following command in the shell.
 
 ~~~~~
 svn checkout https://nanohub.org/tools/surfevolvergui/svn/trunk surfevolvergui
