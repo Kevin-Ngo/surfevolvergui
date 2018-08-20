@@ -1,0 +1,257 @@
+<?xml version="1.0"?>
+<run>
+    <tool>
+        <title>Surface Evolver GUI</title>
+        <about>A GUI for the Surface Evolver to simplify the simulation of polycrystalline grain growth in two dimensions.</about>
+        <command>python @tool/main.py @driver</command>
+    </tool>
+    <input>
+        <note id="descHTML">
+            <contents>file://desc.html</contents>
+        </note>
+        <choice id="typeOfSimulation">
+            <about>
+                <label>Type of Grain</label>
+                <description>Choose which type of grain to simulate. This tool currently offers support for: 3phase-isotropic, 3phase-mm4-cos, and 3phase-mm4-octagon grains.</description>
+            </about>
+            <option id="1">
+                <about>
+                    <label>3phase-iso</label>
+                    <description>Simulate isotropic grains with three different orientations.</description>
+                </about>
+            </option>
+            <option id="2">
+                <about>
+                    <label>3phase-mm4-cos</label>
+                    <description>Simulate mm4-cos grains with three different orientations.</description>
+                </about>
+            </option>
+            <option id="3">
+                <about>
+                    <label>3phase-mm4-octagon</label>
+                    <description>Simulate mm4-octagon grains with three different orientations.</description>
+                </about>
+            </option>
+            <default>3phase-iso</default>
+        </choice>
+        <integer id="numberOfGrains">
+            <about>
+                <label>Number of grains:</label>
+                <description>The number of grains to be created through a Voronoi partition of the plane.</description>
+            </about>
+            <default>100</default>
+            <min>100</min>
+            <max>2147483647</max>
+        </integer>
+        <integer id="numberOfIterations">
+            <about>
+                <label>Number of iterations:</label>
+                <description>The simulation is determined by 'iterations of growth', specify how many iterations you want the grains to grow.</description>
+            </about>
+            <default>1</default>
+            <min>1</min>
+            <max>2147483647</max>
+        </integer>
+        <boolean id="enableColor">
+            <about>
+                <label>Enable color:</label>
+                <description>By default, color is disabled for the images displayed. To see the grains in different colors (3-types) enable color.</description>
+            </about>
+            <default>no</default>
+        </boolean>
+    </input>
+    <output>
+        <image id="grainImageBefore">
+            <about>
+                <label>Grains Before</label>
+                <description>Image of the grains before starting the simulation.</description>
+            </about>
+        </image>
+        <image id="grainImageAfter">
+            <about>
+                <label>Grains After</label>
+                <description>Image of the grains after running the simulation.</description>
+            </about>
+        </image>
+        <curve id="redAreaCurve">
+            <about>
+                <label>Area of Red Grains</label>
+                <description>Curve representing the area of the grains over iterations of "g".</description>
+                <group>Area vs. Iterations of "g"</group>
+            </about>
+            <xaxis>
+                <label>Iterations of "g"</label>
+                <description>Iterations of "g" in Surface Evolver.</description>
+            </xaxis>
+            <yaxis>
+                <label>Total Area of Grains</label>
+                <description>Total area of grains.</description>
+            </yaxis>
+        </curve>
+        <curve id="greenAreaCurve">
+            <about>
+                <label>Area of Green Grains</label>
+                <description>Curve representing the area of the grains over iterations of "g".</description>
+                <group>Area vs. Iterations of "g"</group>
+            </about>
+            <xaxis>
+                <label>Iterations of "g"</label>
+                <description>Iterations of "g" in Surface Evolver.</description>
+            </xaxis>
+            <yaxis>
+                <label>Total Area of Grains</label>
+                <description>Total area of grains.</description>
+            </yaxis>
+        </curve>
+        <curve id="whiteAreaCurve">
+            <about>
+                <label>Area of White Grains</label>
+                <description>Curve representing the area of the grains over iterations of "g".</description>
+                <group>Area vs. Iterations of "g"</group>
+            </about>
+            <xaxis>
+                <label>Iterations of "g"</label>
+                <description>Iterations of "g" in Surface Evolver.</description>
+            </xaxis>
+            <yaxis>
+                <label>Total Area of Grains</label>
+                <description>Total area of grains.</description>
+            </yaxis>
+        </curve>
+        <curve id="numberOfGreenGrainsCurve">
+            <about>
+                <label>Number of Green Grains</label>
+                <description>Curve representing the number of grains over iterations of "g".</description>
+                <group>Number of Grains vs. Iterations of "g"</group>
+            </about>
+            <xaxis>
+                <label>Iterations of "g"</label>
+                <description>Iterations of "g" in Surface Evolver.</description>
+            </xaxis>
+            <yaxis>
+                <label>Number of Grains</label>
+                <description>Number of grains at a given time.</description>
+            </yaxis>
+        </curve>
+        <curve id="numberOfRedGrainsCurve">
+            <about>
+                <label>Number of Red Grains</label>
+                <description>Curve representing the number of grains over iterations of "g".</description>
+                <group>Number of Grains vs. Iterations of "g"</group>
+            </about>
+            <xaxis>
+                <label>Iterations of "g"</label>
+                <description>Iterations of "g" in Surface Evolver.</description>
+            </xaxis>
+            <yaxis>
+                <label>Number of Grains</label>
+                <description>Number of grains at a given time.</description>
+            </yaxis>
+        </curve>
+        <curve id="numberOfWhiteGrainsCurve">
+            <about>
+                <label>Number of White Grains</label>
+                <description>Curve representing the number of grains over iterations of "g".</description>
+                <group>Number of Grains vs. Iterations of "g"</group>
+            </about>
+            <xaxis>
+                <label>Iterations of "g"</label>
+                <description>Iterations of "g" in Surface Evolver.</description>
+            </xaxis>
+            <yaxis>
+                <label>Number of Grains</label>
+                <description>Number of grains at a given time.</description>
+            </yaxis>
+        </curve>
+        <curve id="totalNumberOfGrainsCurve">
+            <about>
+                <label>Total Number of Grains</label>
+                <description>Curve representing the number of grains over iterations of "g".</description>
+                <group>Number of Grains vs. Iterations of "g"</group>
+            </about>
+            <xaxis>
+                <label>Iterations of "g"</label>
+                <description>Iterations of "g" in Surface Evolver.</description>
+            </xaxis>
+            <yaxis>
+                <label>Number of Grains</label>
+                <description>Number of grains at a given time.</description>
+            </yaxis>
+        </curve>
+        <curve id="avgSidesGreenCurve">
+            <about>
+                <label>Avg. # of Sides per Grain (Green)</label>
+                <description>Average number of sides for a grain over iterations of "g".</description>
+                <group>Average Number of Sides per Grain vs. Iterations of "g"</group>
+            </about>
+            <xaxis>
+                <label>Iterations of "g"</label>
+                <description>Iterations of "g" in Surface Evolver.</description>
+            </xaxis>
+            <yaxis>
+                <label>Average Number of Sides per Grain</label>
+                <description>Average number of sides per grain.</description>
+            </yaxis>
+        </curve>
+        <curve id="avgSidesRedCurve">
+            <about>
+                <label>Avg. # of Sides per Grain (Red)</label>
+                <description>Average number of sides for a grain over iterations of "g".</description>
+                <group>Average Number of Sides per Grain vs. Iterations of "g"</group>
+            </about>
+            <xaxis>
+                <label>Iterations of "g"</label>
+                <description>Iterations of "g" in Surface Evolver.</description>
+            </xaxis>
+            <yaxis>
+                <label>Average Number of Sides per Grain</label>
+                <description>Average number of sides per grain.</description>
+            </yaxis>
+        </curve>
+        <curve id="avgSidesWhiteCurve">
+            <about>
+                <label>Avg. # of Sides per Grain (White)</label>
+                <description>Average number of sides for a grain over iterations of "g".</description>
+                <group>Average Number of Sides per Grain vs. Iterations of "g"</group>
+            </about>
+            <xaxis>
+                <label>Iterations of "g"</label>
+                <description>Iterations of "g" in Surface Evolver.</description>
+            </xaxis>
+            <yaxis>
+                <label>Average Number of Sides per Grain</label>
+                <description>Average number of sides per grain.</description>
+            </yaxis>
+        </curve>
+        <curve id="avgSidesTotalCurve">
+            <about>
+                <label>Avg. # of Sides per Grain (Total)</label>
+                <description>Average number of sides for a grain over iterations of "g".</description>
+                <group>Average Number of Sides per Grain vs. Iterations of "g"</group>
+            </about>
+            <xaxis>
+                <label>Iterations of "g"</label>
+                <description>Iterations of "g" in Surface Evolver.</description>
+            </xaxis>
+            <yaxis>
+                <label>Average Number of Sides per Grain</label>
+                <description>Average number of sides per grain.</description>
+            </yaxis>
+        </curve>
+        <curve id="avgCurvaturePerGrainCurve">
+            <about>
+                <label>Average Curvature per Grain vs. Iterations of "g"</label>
+                <description>Average curvature (energy) per grain over iterations of "g".</description>
+            </about>
+            <xaxis>
+                <label>Iterations of "g"</label>
+                <description>Iterations of "g" in Surface Evolver.</description>
+            </xaxis>
+            <yaxis>
+                <label>Average Energy per Grain</label>
+                <description>Average energy per grain.</description>
+                <units>J</units>
+            </yaxis>
+        </curve>
+    </output>
+</run>
