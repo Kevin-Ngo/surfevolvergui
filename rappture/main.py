@@ -117,6 +117,7 @@ for line in commandsToAppend:
 # -----#########################################################-----#
 # EDIT THE *.fe FILE BASED ON RAPPTURE OPTIONS #
 
+# Turn on color before exporting the "before" images
 if enableColor:
     feFile.write("show facet where 1;\n")
 
@@ -126,8 +127,16 @@ pathToImageBefore = "grainsBefore.ps"
 # Call function - from surfEvolverGUIFunctions - to append a command to generate a post script file to the desired path
 appendPostScriptCommand(feFile, pathToImageBefore)
 
+# Toggle the color off so that the simulation runs faster
+if enableColor:
+    feFile.write("show facet where 0;\n")
+
 # Write number of iterations for simulation
 feFile.write("gogo " + str(numberOfIterations) + "\n")
+
+# Show colors in pictures if it is wanted
+if enableColor:
+    feFile.write("show facet where 1;\n")
 
 # EDIT THE *.fe FILE BASED ON RAPPTURE OPTIONS #
 # -----#########################################################-----#
@@ -218,7 +227,7 @@ io['output.curve(avgSidesTotalCurve).about.style'] = '-color orange'
 io['output.curve(avgCurvaturePerGrainCurve).component.xy'] = (grainIterations, avgEnergyPerGrain)
 io['output.curve(avgCurvaturePerGrainCurve).about.style'] = '-color blue'
 
-# Clean up the files in the system - e.g. (numberOfGrains)grains.fe, xxx-report.txt
+# Clean up the files in the system - e.g. (numberOfGrains)grains.fe, xxx-report.txt, and sides.txt
 command = ['rm', pathToFe, pathToOutputFileX, pathToOutputFileSide]
 exitStatus, stdOutput, stdError = execute(command)
 
