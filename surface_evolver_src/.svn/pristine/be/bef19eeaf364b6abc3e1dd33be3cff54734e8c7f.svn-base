@@ -1,0 +1,14 @@
+// Wulff energies. Note that x3,x4 are the components
+// of the edge vector.
+
+parameter amplitude = 0.05   // coefficient of cos(theta)
+
+quantity wulffab energy method edge_general_integral
+scalar_integrand: sqrt(x3^2+x4^2)*(1 - amplitude*cos(4*atan2(-x3,x4)))
+
+quantity wulffbc energy method edge_general_integral
+scalar_integrand: sqrt(x3^2+x4^2)*(1 - amplitude*cos(4*atan2(-x3,x4)+pi/6)) 
+
+quantity wulffca energy method edge_general_integral
+scalar_integrand: sqrt(x3^2+x4^2)*(1 - amplitude*cos(4*atan2(-x3,x4)+pi/3))
+

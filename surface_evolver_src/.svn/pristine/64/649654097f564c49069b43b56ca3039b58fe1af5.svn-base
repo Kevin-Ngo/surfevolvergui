@@ -1,0 +1,28 @@
+// .dmp: Dump of structure.
+
+// datafilename: 
+vertices_predicted         1
+edges_predicted            1
+facets_predicted           1
+facetedges_predicted       1
+bodies_predicted           1
+quantities_predicted            0
+method_instances_predicted      0
+// Total energy:  0
+SPACE_DIMENSION 0
+SURFACE_DIMENSION 0
+
+QUADRATIC
+
+SCALE:  0
+
+
+GAP_CONSTANT:  0
+
+TEMPERATURE:  0
+
+SCALE_LIMIT:  0
+
+INTEGRAL_ORDER_1D: 0
+
+VIEW_MATRIX 

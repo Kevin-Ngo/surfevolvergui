@@ -1,0 +1,4 @@
+#!/bin/sh
+
+/usr/bin/invoke_app "$@" -C rappture -t surfevolvergui \
+                         -u evolver-2.70

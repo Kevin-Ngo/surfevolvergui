@@ -1,0 +1,37 @@
+parameter basetension = 0.5  // constant part of edge tension
+
+// Wulff energies. Note that x3,x4 are the components
+// of the edge vector.
+
+// Wulff vectors
+
+parameter side = 0.70   // height of first octagon vertex (1,side).
+
+// phase ab wulff vectors
+define abvecs real[4][2] = { {1,side},{side,1},{-side,1},{-1,side} }
+
+// phase bc wulff vectors, abvecs rotated 30 degrees
+define bcvecs real[4][2] = {  {sqrt(3)/2-side/2,1/2+sqrt(3)/2*side},
+                              {sqrt(3)/2*side-1/2,side/2+sqrt(3)/2},
+                              {-sqrt(3)/2*side-1/2,-side/2+sqrt(3)/2},
+                              {-sqrt(3)/2-side/2,-1/2+sqrt(3)/2*side} }
+                              
+// phase ca wulff vectors, abvecs rotated 60 degrees
+define cavecs real[4][2] = {  {1/2-side*sqrt(3)/2,sqrt(3)/2+side/2},
+                              {1/2*side-sqrt(3)/2,side*sqrt(3)/2+1/2},
+                              {-1/2*side-sqrt(3)/2,-side*sqrt(3)/2+1/2},
+                              {-1/2-side*sqrt(3)/2,-sqrt(3)/2+1/2*side} }
+                              
+
+quantity wulffab energy method edge_general_integral
+scalar_integrand: maximum(maximum(abs(x4*abvecs[1][1]-x3*abvecs[1][2]),abs(x4*abvecs[2][1]-x3*abvecs[2][2])),
+                                          maximum(abs(x4*abvecs[3][1]-x3*abvecs[3][2]),abs(x4*abvecs[4][1]-x3*abvecs[4][2]))) - basetension*sqrt(x3^2+x4^2)
+                                                  
+
+quantity wulffbc energy method edge_general_integral
+scalar_integrand: maximum(maximum(abs(x4*bcvecs[1][1]-x3*bcvecs[1][2]),abs(x4*bcvecs[2][1]-x3*bcvecs[2][2])),
+                                          maximum(abs(x4*bcvecs[3][1]-x3*bcvecs[3][2]),abs(x4*bcvecs[4][1]-x3*bcvecs[4][2]))) - basetension*sqrt(x3^2+x4^2)
+
+quantity wulffca energy method edge_general_integral
+scalar_integrand: maximum(maximum(abs(x4*cavecs[1][1]-x3*cavecs[1][2]),abs(x4*cavecs[2][1]-x3*cavecs[2][2])),
+                                          maximum(abs(x4*cavecs[3][1]-x3*cavecs[3][2]),abs(x4*cavecs[4][1]-x3*cavecs[4][2]))) - basetension*sqrt(x3^2+x4^2)

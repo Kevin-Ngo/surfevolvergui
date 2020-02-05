@@ -1,0 +1,179 @@
+suppress_warning 2172   // about dissolving edges between two facets
+
+set edge tension basetension // uniform part of tension for proper vertex popping
+
+// random assignment of orientations, by setting facet color
+{ foreach facet ff do
+  { rr := random;
+    if rr < 1/3 then ff.color := red
+    else if rr < 2/3 then ff.color := green;
+    // else white
+  };
+  dissolve edge ee where ee.facet[1].color==ee.facet[2].color;
+  dissolve vertex;
+}
+
+showq; // start graphics without graphics prompt
+
+// Assignment of edges to the appropriate Wulff energy quantities
+set_wulff := {
+   set edge ee quantity wulffab where (ee.facet[1].color==red and ee.facet[2].color==green)
+            or (ee.facet[1].color==green and ee.facet[2].color==red);
+   set edge ee quantity wulffbc where (ee.facet[1].color==green and ee.facet[2].color==white)
+            or (ee.facet[1].color==white and ee.facet[2].color==green);
+   set edge ee quantity wulffca where (ee.facet[1].color==white and ee.facet[2].color==red)
+            or (ee.facet[1].color==red and ee.facet[2].color==white);
+}
+
+set_wulff
+
+// evolution step
+gg :=  {   g; dissolve edge ee where ee.facet[1].color==ee.facet[2].color;
+           set_wulff;
+           // Usually we want to merge like-orientation facets, but when
+           // that would make a non-simply connected facet, Evolver won't
+           // do it, so just set tension to zero and hope they don't
+           // get too fouled up.
+           foreach edge ee where ee.facet[1].id==ee.facet[2].id do 
+           { unset ee quantity wulffab;  // not worth trying to decide on which one
+             unset ee quantity wulffbc;
+             unset ee quantity wulffca;
+             set ee color yellow;
+             set ee tension .0001; //Jean effort
+           } 
+       }
+
+iterations := 0; // number of iterations
+
+// output data at iteration 0 (before the simulation)
+printf "Iterations: 0.0 red: %d green: %d white: %d\n", Sum(facets where color == red,1), Sum(facets where color == green,1), Sum(facets where color == white,1) >> "xxx-report.txt";
+printf "Total energy: %d\n", total_energy >> "xxx-report.txt";
+printf "Iterations: 0.0\n" >> "sides.txt";
+
+/* for each "grain" find all of the triple_points by looking at how many edges are at each vertex */
+
+foreach facet ff where color == red do {
+	foreach ff.vertices vv where Sum(vv.edges,1) >= 3 do 
+	{
+	    set vv triple_point;
+	}
+}
+foreach facet ff where color == green do {
+	foreach ff.vertices vv where Sum(vv.edges,1) >= 3 do 
+	{
+	    set vv triple_point
+	}
+}
+foreach facet ff where color == white do {
+	foreach ff.vertices vv where Sum(vv.edges,1) >= 3 do 
+	{
+	    set vv triple_point
+	}
+}
+
+/* Number of triple vertices in theory is the number of sides of that grain, so record it into a output file*/
+
+printf "red: %d grains\n", Sum(facets where color == red,1) >> "sides.txt";
+foreach facet ff where color == red do {
+	print(Sum(ff.vertices where triple_point,1)) >> "sides.txt"; 
+}
+printf "green: %d grains\n", Sum(facets where color == green,1) >> "sides.txt";
+foreach facet ff where color == green do {
+	print(Sum(ff.vertices where triple_point,1)) >> "sides.txt";
+}
+printf "white: %d grains\n", Sum(facets where color == white,1) >> "sides.txt";
+foreach facet ff where color == white do {
+	print(Sum(ff.vertices where triple_point,1)) >> "sides.txt";
+}
+
+/* reset all vertices to be not triple so that triple_points can be recalculated */
+
+foreach vertex vv do {
+	unset vv triple_point;
+}
+
+// Reporting script, appends output to a file.
+report := { printf "Iterations: %10.8f  red: %d  green: %d  white: %d\n", iterations,sum(facets where color==red,1),
+                       Sum(facets where color==green,1), sum(facets where color==white,1) >> "xxx-report.txt";
+                    printf"Green area histogram:\n" >> "xxx-report.txt";
+                    histogram(facets where color==green,area) >> "xxx-report.txt";
+                    printf"Red area histogram:\n" >> "xxx-report.txt";
+                    histogram(facets where color==red,area) >> "xxx-report.txt";    
+                    printf"White area histogram:\n" >> "xxx-report.txt";
+                    histogram(facets where color==white,area) >> "xxx-report.txt";
+}
+
+// Reporting script, appends output to a file.
+reportEnergyArea := { printf "Iterations: %10.8f  red: %d  green: %d  white: %d\n", iterations,sum(facets where color==red,1), Sum(facets where color==green,1), sum(facets where color==white,1) >> "xxx-report.txt";
+	printf"Total energy: " >> "xxx-report.txt";
+        print(total_energy) >> "xxx-report.txt";
+        printf"Green area histogram:\n" >> "xxx-report.txt";
+        histogram(facets where color==green,area) >> "xxx-report.txt";
+        printf"Red area histogram:\n" >> "xxx-report.txt";
+        histogram(facets where color==red,area) >> "xxx-report.txt";    
+        printf"White area histogram:\n" >> "xxx-report.txt";
+        histogram(facets where color==white,area) >> "xxx-report.txt";
+}
+
+/* Report the number of sides at a given number of iterations and append it to a file named "sides.txt" */
+reportSides := {
+
+/* for each "grain" find all of the triple_points by looking at how many edges are at each vertex */
+
+	printf "Iterations: %10.8f\n", iterations >> "sides.txt";
+	foreach facet ff where color == red do {
+		foreach ff.vertices vv where Sum(vv.edges,1) >= 3 do {
+			set vv triple_point
+		}
+	};
+
+	foreach facet ff where color == green do {
+		foreach ff.vertices vv where Sum(vv.edges,1) >= 3 do {
+			set vv triple_point
+		}
+	};
+
+	foreach facet ff where color == white do {
+		foreach ff.vertices vv where Sum(vv.edges,1) >= 3 do {
+			set vv triple_point
+		}
+	};
+
+/* Number of triple vertices in theory is the number of sides of that grain, so record it into a output file */
+
+	printf "red: %d grains\n", Sum(facets where color == red,1) >> "sides.txt";
+	foreach facet ff where color == red do {
+		print(Sum(ff.vertices where triple_point,1)) >> "sides.txt";
+	};
+
+	printf "green: %d grains\n", Sum(facets where color == green,1) >> "sides.txt";
+	foreach facet ff where color == green do {
+		print(Sum(ff.vertices where triple_point,1)) >> "sides.txt";
+	};
+
+	printf "white: %d grains\n", Sum(facets where color == white,1) >> "sides.txt";
+	foreach facet ff where color == white do {
+		print(Sum(ff.vertices where triple_point,1)) >> "sides.txt";
+	};
+
+/* reset all vertices to be not triple so that triple_points can be recalculated */
+
+	foreach vertex vv do {
+		unset vv triple_point;
+	};
+}
+
+gogo := {
+   { gg 100; iterations := iterations + 100; reportEnergyArea; reportSides; } 50;
+}
+
+
+/* Usage: gogo
+
+   "gogo" doesn't run to completion; you can do "gg 11000" afterwards.
+
+   If you want to see the three types of regions as colored facets,
+   do "show facet where 1" before gogo, but beware that some nonconvex
+   facets may flummox Evolver.
+*/
+
